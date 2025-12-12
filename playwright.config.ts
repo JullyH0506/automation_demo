@@ -15,7 +15,7 @@ export default defineConfig<TestOptions>({
       "@argos-ci/playwright/reporter",
       {
         uploadToArgos: !!process.env.CI,
-        token: "argos_37230cdd30a9fbc8a9ffb5edca34be7d1a"
+        //token: "argos_37230cdd30a9fbc8a9ffb5edca34be7d1a"
       }
     ],
     ['json', {outputFile: 'test-result/jsonReport.json'}],
