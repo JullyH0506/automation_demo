@@ -10,6 +10,13 @@ export default defineConfig<TestOptions>({
 
   retries: 1,
   reporter: [
+    process.env.CI ? ["dot"] : ["list"],
+    [
+      "@argos-ci/playwright/reporter",
+      {
+        uploadToArgos: !!process.env.CI,
+      }
+    ],
     ['json', {outputFile: 'test-result/jsonReport.json'}],
     ['junit', {outputFile: 'test-result/junitReport.xml'}],
     //['allure-playwright'],
